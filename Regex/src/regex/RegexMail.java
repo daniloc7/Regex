@@ -15,8 +15,7 @@ public class RegexMail {
     String email = "^(.+)@(.+)$";
     String pontoDecimal = "^[0-9]+.[0-9]+$";
     String ip = "^[0-9]{2,3}.[0-9]{2,3}.[0-9]{2,3}.[0-9]{2,3}$";
-    String url = "^(http://|https://|www).([a-zA-Z]+).(com|tv|.com.br)";
-//    String url = "^(http://|https://|www).([a-zA-Z])+.(com|tv|.com.br)$";
+    String url1 = "^(http://|https://)?(www.)?([a-zA-Z])+.(com|tv|.com.br)$";
     
     public static void main(String[] args) {
         RegexMail obj = new RegexMail();
@@ -47,7 +46,7 @@ public class RegexMail {
     }
     
     public void checkUrl() {
-        Pattern pattern = Pattern.compile(url);
+        Pattern pattern = Pattern.compile(url1);
         try {
             File myFile = new File(fnameUrl);
             Scanner scan = new Scanner(myFile);
